@@ -1,7 +1,5 @@
-<h1>Books#edit</h1>
-
-<h2>New book</h2>
-<%= form_with model: @book, url:update_book_path(@book.id), method: :patch do |f| %>
+<h2>Editing Book</h2>
+<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
   <h4>Title</h4>
   <%= f.text_field :title %>
@@ -9,8 +7,12 @@
   <h4>Body</h4>
   <%= f.text_area :body %>
 
-  <%= f.submit '保存' %>
+  <%= f.submit 'Update Book' %>
 
 <% end %>
+
+
+<%= link_to "Show", book_path(@book.id) %>
+<%= link_to "Back", books_path(@book.id) %>
 
 
